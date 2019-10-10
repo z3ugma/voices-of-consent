@@ -24,3 +24,6 @@ box_items.each do |inventory_type_name, abuse_types, age_ranges|
     CoreBoxItem.joins(:abuse_type, :inventory_type).where(abuse_type: abuse_type, inventory_type: inventory_type).first_or_create!
   end
 end
+
+#Create Requesters and a BoxRequest each
+FactoryBot.create_list(:requester_with_box_requests, 45)
